@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Chuyển đổi tiền tệ</title>
+</head>
+<body>
+<table>
+    <tr>
+       <th>Amount</th>
+        <th>From Currency</th>
+        <th>To Currency</th>
+    </tr>
+    <tr>
+        <td><input type="text" id="amount"></td>
+        <td>
+            <select name="" id="from">
+                <option value="1">USD</option>
+                <option value="23000">VND</option>
+            </select>
+        </td>
+        <td>
+            <select name="" id="to">
+                <option value="1">USD</option>
+                <option value="23000">VND</option>
+            </select>
+        </td>
+        <td>
+            <button style="background: #9b59b6" onclick="moneyChange()">Convert</button>
+        </td>
+    </tr>
+    <tr>
+        <th colspan="4" id="result" style="color:#3498db"></th>
+    </tr>
+</table>
+<script>
+    function moneyChange(){
+        let amount = +document.getElementById("amount").value
+        let from = +document.getElementById("from").value
+        let to = +document.getElementById("to").value
+        let money = amount * to / from
+        document.getElementById("result").innerHTML = "Result :" + money;
+    }
+
+
+</script>
+
+</body>
+</html>
